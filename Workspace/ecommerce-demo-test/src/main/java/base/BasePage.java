@@ -1,17 +1,23 @@
 package base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
-
-	public static WebDriver driver;
+	
 	private String url;
 	private Properties prop;
 	
@@ -23,23 +29,9 @@ public class BasePage {
 				"\\src\\main\\java\\resources\\config.properties");
 		prop.load(data);
 	}
-
-	//Create a way to easily switch between different drivers for different WebDrivers using the config.properties file.
-	public WebDriver getDriver() {
-		if (prop.getProperty("browser").equals("chrome")) {
-			// If the value equals chrome, set the WebDriver to use the chromedriver.exe
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-		} else if (prop.getProperty("browser").equals("firefox")) {
-			// If the value equals firefox, set the WebDriver to use the gekodriver.exe
-			System.setProperty("webdriver.geko.driver", System.getProperty("user.dir") + "\\drivers\\gekodriver.exe");
-			driver = new FirefoxDriver();
-		} else if (prop.getProperty("browser").equals("edge")) {
-			// If the value equals edge, set the WebDriver to use the msedgedriver.exe
-			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + "\\drivers\\msedgedriver.exe");
-			driver = new EdgeDriver();
-		}
-		return driver;
+	
+	public static WebDriver getDriver() {
+		return WebDriverHandler.getDriver();
 	}
 	
 	// Create an easy way to obtain the test sites URL from the config.properties file.
@@ -49,6 +41,20 @@ public class BasePage {
 	}
 	
 	// Set up a system to take screenshots of the test to capture any failed tests.
+	public void takeScreenshot(String name) throws IOException {
+		File srcFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+		File destFile = new File(System.getProperty("user.dir") + "\\screenshots\\" + timestamp() + ".png");
+		FileUtils.copyFile(srcFile, destFile);
+	}
 	
+	// Create a timestamp
+	public String timestamp() {
+		return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
+	}
+	
+	public static void waitForElementInvisible(WebElement element, Duration timer) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), timer);
+		wait.until(ExpectedConditions.invisibilityOf(element));
+	}
 	
 }
