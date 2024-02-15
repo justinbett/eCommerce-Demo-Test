@@ -5,9 +5,9 @@
     <classes>
       <class name="com.justinbett.ecommerce_demo_test.InitialTest">
         <methods>
+          <include name="createAccount"/>
           <include name="cleanup"/>
           <include name="setup"/>
-          <include name="initialTest"/>
         </methods>
       </class> <!-- com.justinbett.ecommerce_demo_test.InitialTest -->
     </classes>
