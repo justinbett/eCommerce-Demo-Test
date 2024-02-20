@@ -18,6 +18,8 @@ public class CreateAccountPage extends BasePage {
 	By password = By.cssSelector("input#password");
 	By confirmPassword = By.cssSelector("input#password-confirmation");
 	By createAccountBtn = By.cssSelector("button[title='Create an Account']");
+	By createError = By.cssSelector("main#maincontent > .messages.page");
+	By homePage = By.cssSelector(".content.header > a > img");
 		
 	public CreateAccountPage() throws IOException {
 		super();
@@ -48,4 +50,11 @@ public class CreateAccountPage extends BasePage {
 		return driver.findElement(createAccountBtn);
 	}
 	
+	public WebElement getCreateError() {
+		return driver.findElement(createError);
+	}
+	
+	public WebElement getHomePage() {
+		return driver.findElement(homePage);
+	}
 }

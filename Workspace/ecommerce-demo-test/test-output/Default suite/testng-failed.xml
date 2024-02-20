@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.justinbett.ecommerce_demo_test.InitialTest">
+      <class name="com.justinbett.ecommerce_demo_test.AccountSignInOut">
         <methods>
-          <include name="createAccount"/>
-          <include name="cleanup"/>
-          <include name="setup"/>
+          <include name="signOut"/>
+          <include name="signIn"/>
         </methods>
-      </class> <!-- com.justinbett.ecommerce_demo_test.InitialTest -->
+      </class> <!-- com.justinbett.ecommerce_demo_test.AccountSignInOut -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

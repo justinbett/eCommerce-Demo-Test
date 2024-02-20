@@ -31,7 +31,7 @@ public class BasePage {
 	}
 	
 	public static WebDriver getDriver() {
-		return WebDriverHandler.getDriver();
+		return WebDriverInstance.getDriver();
 	}
 	
 	// Create an easy way to obtain the test sites URL from the config.properties file.

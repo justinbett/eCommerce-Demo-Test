@@ -17,6 +17,6 @@ public class Hooks extends BasePage{
 	
 	@AfterTest
 	public void cleanup() {
-		WebDriverHandler.driverCleanup();
+		WebDriverInstance.driverCleanup();
 	}
 }

@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-15T08:50:08 EST" name="Default suite" finished-at="2024-02-15T08:50:24 EST" duration-ms="15340">
+  <suite started-at="2024-02-20T09:35:11 EST" name="Default suite" finished-at="2024-02-20T09:35:16 EST" duration-ms="4867">
     <groups>
     </groups>
-    <test started-at="2024-02-15T08:50:08 EST" name="Default test" finished-at="2024-02-15T08:50:24 EST" duration-ms="15340">
-      <class name="com.justinbett.ecommerce_demo_test.InitialTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.justinbett.ecommerce_demo_test.InitialTest@158da8e]" started-at="2024-02-15T08:50:08 EST" name="setup" finished-at="2024-02-15T08:50:11 EST" duration-ms="2552" status="PASS">
+    <test started-at="2024-02-20T09:35:11 EST" name="Default test" finished-at="2024-02-20T09:35:16 EST" duration-ms="4867">
+      <class name="com.justinbett.ecommerce_demo_test.AccountSignInOut">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.justinbett.ecommerce_demo_test.AccountSignInOut@5e1fa5b1]" started-at="2024-02-20T09:35:11 EST" name="setup" finished-at="2024-02-20T09:35:12 EST" duration-ms="1253" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createAccount()[pri:0, instance:com.justinbett.ecommerce_demo_test.InitialTest@158da8e]" started-at="2024-02-15T08:50:11 EST" name="createAccount" finished-at="2024-02-15T08:50:23 EST" duration-ms="12590" status="PASS">
+        <test-method signature="signIn()[pri:0, instance:com.justinbett.ecommerce_demo_test.AccountSignInOut@5e1fa5b1]" started-at="2024-02-20T09:35:12 EST" name="signIn" finished-at="2024-02-20T09:35:14 EST" duration-ms="2200" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createAccount -->
-        <test-method is-config="true" signature="cleanup()[pri:0, instance:com.justinbett.ecommerce_demo_test.InitialTest@158da8e]" started-at="2024-02-15T08:50:23 EST" name="cleanup" finished-at="2024-02-15T08:50:24 EST" duration-ms="169" status="PASS">
+        </test-method> <!-- signIn -->
+        <test-method signature="signOut()[pri:0, instance:com.justinbett.ecommerce_demo_test.AccountSignInOut@5e1fa5b1]" started-at="2024-02-20T09:35:14 EST" name="signOut" finished-at="2024-02-20T09:35:15 EST" duration-ms="1205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signOut -->
+        <test-method is-config="true" signature="cleanup()[pri:0, instance:com.justinbett.ecommerce_demo_test.AccountSignInOut@5e1fa5b1]" started-at="2024-02-20T09:35:15 EST" name="cleanup" finished-at="2024-02-20T09:35:16 EST" duration-ms="179" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanup -->
-      </class> <!-- com.justinbett.ecommerce_demo_test.InitialTest -->
+      </class> <!-- com.justinbett.ecommerce_demo_test.AccountSignInOut -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
