@@ -20,13 +20,11 @@ public class AccountSignInOut extends Hooks {
 		super();
 	}
 	
-	Homepage homePage = new Homepage();
-	CreateAccountPage createAccountPage = new CreateAccountPage();
-	SignInPage signInPage = new SignInPage();
-	SignOutPage signOutPage = new SignOutPage();
-	
 	@Test
 	public void signIn() throws IOException {
+		Homepage homePage = new Homepage();
+		SignInPage signInPage = new SignInPage();
+		
 		// Sign In from Home Page
 		homePage.getSignIn().click();
 		signInPage.getEmail().sendKeys("jbtest123@test.com");
@@ -38,6 +36,9 @@ public class AccountSignInOut extends Hooks {
 	
 	@Test
 	public void signOut() throws IOException {
+		Homepage homePage = new Homepage();
+		SignOutPage signOutPage = new SignOutPage();
+		
 		// Sign Out from Home Page
 		homePage.getUserNav().click();
 		homePage.getSignOut().click();

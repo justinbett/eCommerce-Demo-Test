@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import base.BasePage;
 import base.Hooks;
 import pageObjects.CreateAccountPage;
 import pageObjects.Homepage;
@@ -12,20 +13,18 @@ import pageObjects.SignInPage;
 import pageObjects.SignOutPage;
 
 @Listeners(resources.Listeners.class)
-public class AccountCreation extends Hooks{
+public class AccountCreation extends Hooks {
 	
 	public AccountCreation() throws IOException {
 		super();
 	}
-	
-	Homepage homePage = new Homepage();
-	CreateAccountPage createAccountPage = new CreateAccountPage();
-	SignInPage signInPage = new SignInPage();
-	SignOutPage signOutPage = new SignOutPage();
-	
+		
 	//Initial test to check setup functionality
 	@Test
 	public void createAccount() throws IOException {
+		Homepage homePage = new Homepage();
+		CreateAccountPage createAccountPage = new CreateAccountPage();
+		
 		homePage.getCreateAccount().click();
 		createAccountPage.getFirstName().sendKeys("Justin");
 		createAccountPage.getLastName().sendKeys("B");
