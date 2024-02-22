@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverInstance {
 	
-	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+	public static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	
 	public static WebDriver getDriver() {
 		if(driver.get() == null) {

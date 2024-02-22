@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 import base.BasePage;
 import base.Hooks;
-import pageObjects.CreateAccountPage;
 import pageObjects.Homepage;
 import pageObjects.SignInPage;
 import pageObjects.SignOutPage;
@@ -31,7 +30,7 @@ public class AccountSignInOut extends Hooks {
 		signInPage.getPassword().sendKeys("AB#$12345");
 		homePage.getSignInBtn().click();
 		Assert.assertEquals("Home Page", BasePage.getDriver().getTitle());
-		System.out.println("User successfully signed in.");
+		System.out.println("signIn() Test: User successfully signed in.");
 	}
 	
 	@Test
@@ -43,6 +42,6 @@ public class AccountSignInOut extends Hooks {
 		homePage.getUserNav().click();
 		homePage.getSignOut().click();
 		Assert.assertEquals("You are signed out", signOutPage.getSignOutConfirm().getText());
-		System.out.println("User successfully signed out.");
+		System.out.println("signOut() Test: User successfully signed out.");
 	}
 }
