@@ -19,7 +19,7 @@ public class AccountSignInOut extends Hooks {
 		super();
 	}
 	
-	@Test
+	@Test()
 	public void signIn() throws IOException {
 		Homepage homePage = new Homepage();
 		SignInPage signInPage = new SignInPage();
@@ -33,7 +33,7 @@ public class AccountSignInOut extends Hooks {
 		System.out.println("signIn() Test: User successfully signed in.");
 	}
 	
-	@Test
+	@Test(dependsOnMethods = {"signIn"})
 	public void signOut() throws IOException {
 		Homepage homePage = new Homepage();
 		SignOutPage signOutPage = new SignOutPage();

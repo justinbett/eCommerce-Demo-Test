@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.justinbett.ecommerce_demo_test.MultiDropdownMainNavigation">
+      <class name="com.justinbett.ecommerce_demo_test.ItemSearchAdd">
         <methods>
           <include name="cleanup"/>
-          <include name="multiDropDownMainNavigation"/>
+          <include name="addSearch1"/>
           <include name="setup"/>
+          <include name="search1"/>
         </methods>
-      </class> <!-- com.justinbett.ecommerce_demo_test.MultiDropdownMainNavigation -->
+      </class> <!-- com.justinbett.ecommerce_demo_test.ItemSearchAdd -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

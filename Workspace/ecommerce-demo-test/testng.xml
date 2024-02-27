@@ -18,9 +18,9 @@
   </test>
   
   <!-- Test -->
-  <test thread-count="5" name="Multi-Dropdown Main Navigation">
+  <test thread-count="5" name="Dropdown Navigation">
     <classes>
-      <class name="com.justinbett.ecommerce_demo_test.MultiDropdownMainNavigation"/>
+      <class name="com.justinbett.ecommerce_demo_test.DropdownNavigation"/>
     </classes>
   </test>
   

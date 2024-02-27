@@ -25,6 +25,7 @@ public class Homepage extends BasePage{
 	By menNavBottoms = By.cssSelector("li:nth-of-type(3) > ul[role='menu'] > li:nth-of-type(2) > a[role='menuitem']");
 	By gearNav = By.cssSelector("li:nth-of-type(4) > a[role='menuitem'] > span:nth-of-type(2)");
 	By trainingNav = By.cssSelector("li:nth-of-type(5) > a[role='menuitem'] > span:nth-of-type(2)");
+	By searchBar = By.cssSelector("input#search");
 	
 	public Homepage() throws IOException {
 		super();
@@ -81,5 +82,9 @@ public class Homepage extends BasePage{
 	
 	public WebElement getTrainingNav() {
 		return driver.findElement(trainingNav);
+	}
+	
+	public WebElement getSearchBar() {
+		return driver.findElement(searchBar);
 	}
 }

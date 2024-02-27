@@ -11,14 +11,14 @@ import base.Hooks;
 import pageObjects.Homepage;
 
 @Listeners(resources.Listeners.class)
-public class MultiDropdownMainNavigation extends Hooks {
+public class DropdownNavigation extends Hooks {
 	
-	public MultiDropdownMainNavigation() throws IOException {
+	public DropdownNavigation() throws IOException {
 		super();
 	}
 	
 	@Test
-	public void multiDropDownMainNavigation () throws IOException, InterruptedException {
+	public void dropdownNavigation () throws IOException, InterruptedException {
 		Actions action = new Actions(BasePage.getDriver());
 		Homepage homePage = new Homepage();
 		action.moveToElement(homePage.getWomenNav()).perform();

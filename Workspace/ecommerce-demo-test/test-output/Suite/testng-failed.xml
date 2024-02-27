@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="2" parallel="tests" name="Account Sign In and Out(failed)">
+<suite thread-count="3" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="3" parallel="tests" name="Dropdown Navigation(failed)">
     <classes>
-      <class name="com.justinbett.ecommerce_demo_test.AccountSignInOut">
+      <class name="com.justinbett.ecommerce_demo_test.DropdownNavigation">
         <methods>
-          <include name="signOut"/>
+          <include name="multiDropDownMainNavigation"/>
           <include name="cleanup"/>
           <include name="setup"/>
-          <include name="signIn"/>
         </methods>
-      </class> <!-- com.justinbett.ecommerce_demo_test.AccountSignInOut -->
+      </class> <!-- com.justinbett.ecommerce_demo_test.DropdownNavigation -->
     </classes>
-  </test> <!-- Account Sign In and Out(failed) -->
+  </test> <!-- Dropdown Navigation(failed) -->
 </suite> <!-- Failed suite [Suite] -->
