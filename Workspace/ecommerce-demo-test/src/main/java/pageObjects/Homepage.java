@@ -22,10 +22,12 @@ public class Homepage extends BasePage{
 	By womenNavBottoms = By.cssSelector("li:nth-of-type(2) > ul[role='menu'] > li:nth-of-type(2) > a[role='menuitem'] > span:nth-of-type(2)");
 	By menNav = By.cssSelector("li:nth-of-type(3) > a[role='menuitem'] > span:nth-of-type(2)");
 	By menNavTops = By.cssSelector("li:nth-of-type(3) > ul[role='menu'] > li:nth-of-type(1) > a[role='menuitem']");
+	By menNavJackets = By.cssSelector("li:nth-of-type(3) > ul[role='menu'] > li:nth-of-type(1) > ul[role='menu'] > li:nth-of-type(1) > a[role='menuitem']");
 	By menNavBottoms = By.cssSelector("li:nth-of-type(3) > ul[role='menu'] > li:nth-of-type(2) > a[role='menuitem']");
 	By gearNav = By.cssSelector("li:nth-of-type(4) > a[role='menuitem'] > span:nth-of-type(2)");
 	By trainingNav = By.cssSelector("li:nth-of-type(5) > a[role='menuitem'] > span:nth-of-type(2)");
 	By searchBar = By.cssSelector("input#search");
+	By promoFree = By.cssSelector(".block-promo.home-t-shirts  .action.icon.more");
 	
 	public Homepage() throws IOException {
 		super();
@@ -72,6 +74,10 @@ public class Homepage extends BasePage{
 		return driver.findElement(menNavTops);
 	}
 	
+	public WebElement getMenNavJackets() {
+		return driver.findElement(menNavJackets);
+	}
+	
 	public WebElement getMenNavBottoms() {
 		return driver.findElement(menNavBottoms);
 	}
@@ -86,5 +92,9 @@ public class Homepage extends BasePage{
 	
 	public WebElement getSearchBar() {
 		return driver.findElement(searchBar);
+	}
+	
+	public WebElement getPromoFree() {
+		return driver.findElement(promoFree);
 	}
 }

@@ -24,4 +24,11 @@
     </classes>
   </test>
   
+   <!-- Test -->
+  <test thread-count="5" name="Item Search">
+    <classes>
+      <class name="com.justinbett.ecommerce_demo_test.ItemSearch"/>
+    </classes>
+  </test>
+  
 </suite>

@@ -14,14 +14,14 @@ import base.Hooks;
 import pageObjects.Homepage;
 import pageObjects.SearchResults;
 
-public class ItemSearchAdd extends Hooks{
+public class ItemSearch extends Hooks{
 
-	public ItemSearchAdd() throws IOException {
+	public ItemSearch() throws IOException {
 		super();
 	}
 	
 	@Test()
-	public void search1() throws IOException {
+	public void search() throws IOException {
 		Homepage homepage = new Homepage();
 		
 		homepage.getSearchBar().sendKeys("yoga shorts", Keys.RETURN);
@@ -30,7 +30,7 @@ public class ItemSearchAdd extends Hooks{
 	}
 	
 	@Test(dependsOnMethods = {"search1"})
-	public void addSearch1() throws IOException, InterruptedException {
+	public void addSearch() throws IOException, InterruptedException {
 		Actions action = new Actions(BasePage.getDriver());
 		SearchResults searchResults = new SearchResults();
 		WebDriverWait wait = new WebDriverWait(BasePage.getDriver(), Duration.ofSeconds(5));
@@ -53,6 +53,5 @@ public class ItemSearchAdd extends Hooks{
 		
 		searchResults.getCart().click();
 		searchResults.getProceedCart().click();
-		Thread.sleep(5000);
 	}	
 }

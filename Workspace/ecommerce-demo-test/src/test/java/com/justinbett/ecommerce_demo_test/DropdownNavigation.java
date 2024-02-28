@@ -29,5 +29,9 @@ public class DropdownNavigation extends Hooks {
 		action.moveToElement(homePage.getMenNavBottoms()).perform();
 		action.moveToElement(homePage.getGearNav()).perform();
 		action.moveToElement(homePage.getTrainingNav()).perform();
+		action.moveToElement(homePage.getMenNav()).perform();
+		action.moveToElement(homePage.getMenNavTops()).perform();
+		action.moveToElement(homePage.getMenNavJackets()).perform();
+		homePage.getMenNavJackets().click();
 	}
 }
