@@ -29,7 +29,7 @@ public class ItemSearch extends Hooks{
 		System.out.println("Searched for: yoga shorts");
 	}
 	
-	@Test(dependsOnMethods = {"search1"})
+	@Test(dependsOnMethods = {"search"})
 	public void addSearch() throws IOException, InterruptedException {
 		Actions action = new Actions(BasePage.getDriver());
 		SearchResults searchResults = new SearchResults();

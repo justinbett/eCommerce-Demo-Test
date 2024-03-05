@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.justinbett.ecommerce_demo_test.ItemSearchAdd">
+      <class name="com.justinbett.ecommerce_demo_test.PromoAdd">
         <methods>
+          <include name="PromoTest"/>
           <include name="cleanup"/>
-          <include name="addSearch1"/>
           <include name="setup"/>
-          <include name="search1"/>
         </methods>
-      </class> <!-- com.justinbett.ecommerce_demo_test.ItemSearchAdd -->
+      </class> <!-- com.justinbett.ecommerce_demo_test.PromoAdd -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
