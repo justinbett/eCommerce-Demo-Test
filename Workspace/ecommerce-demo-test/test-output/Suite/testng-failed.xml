@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="3" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="3" parallel="tests" name="Dropdown Navigation(failed)">
+  <test thread-count="3" parallel="tests" name="Account Sign In and Out(failed)">
     <classes>
-      <class name="com.justinbett.ecommerce_demo_test.DropdownNavigation">
+      <class name="com.justinbett.ecommerce_demo_test.AccountSignInOut">
         <methods>
-          <include name="multiDropDownMainNavigation"/>
+          <include name="signOut"/>
           <include name="cleanup"/>
           <include name="setup"/>
+          <include name="signIn"/>
         </methods>
-      </class> <!-- com.justinbett.ecommerce_demo_test.DropdownNavigation -->
+      </class> <!-- com.justinbett.ecommerce_demo_test.AccountSignInOut -->
     </classes>
-  </test> <!-- Dropdown Navigation(failed) -->
+  </test> <!-- Account Sign In and Out(failed) -->
+  <test thread-count="3" parallel="tests" name="Promo Add(failed)">
+    <classes>
+      <class name="com.justinbett.ecommerce_demo_test.PromoAdd">
+        <methods>
+          <include name="cleanup"/>
+          <include name="promoTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.justinbett.ecommerce_demo_test.PromoAdd -->
+    </classes>
+  </test> <!-- Promo Add(failed) -->
 </suite> <!-- Failed suite [Suite] -->

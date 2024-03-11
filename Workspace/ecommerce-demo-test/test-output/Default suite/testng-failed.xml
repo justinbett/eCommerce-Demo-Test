@@ -5,8 +5,8 @@
     <classes>
       <class name="com.justinbett.ecommerce_demo_test.PromoAdd">
         <methods>
-          <include name="PromoTest"/>
           <include name="cleanup"/>
+          <include name="promoTest"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.justinbett.ecommerce_demo_test.PromoAdd -->

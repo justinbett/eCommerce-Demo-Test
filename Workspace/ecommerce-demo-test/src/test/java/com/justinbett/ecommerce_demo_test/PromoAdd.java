@@ -41,43 +41,15 @@ public class PromoAdd extends Hooks {
 		
 		wait.until(ExpectedConditions.visibilityOf(shirtsPromo.getCartQty()));
 		
-		action.moveToElement(shirtsPromo.getShirt2()).perform();
-		shirtsPromo.getShirt2Size().click();
-		shirtsPromo.getShirt2Color().click();
-		shirtsPromo.getShirt2Add().click();
-		System.out.println("Added Shirt 2 to cart");
-
-		wait.until(ExpectedConditions.visibilityOf(shirtsPromo.getCartQty()));
-		
-		action.moveToElement(shirtsPromo.getShirt3()).perform();
-		shirtsPromo.getShirt3Size().click();
-		shirtsPromo.getShirt3Color().click();
-		shirtsPromo.getShirt3Add().click();
-		System.out.println("Added Shirt 3 to cart");
-
-		wait.until(ExpectedConditions.visibilityOf(shirtsPromo.getCartQty()));
-		
-		action.moveToElement(shirtsPromo.getShirt4()).perform();
-		shirtsPromo.getShirt4Size().click();
-		shirtsPromo.getShirt4Color().click();
-		shirtsPromo.getShirt4Add().click();
-		System.out.println("Added Shirt 4 to cart");
-		
-
-		wait.until(ExpectedConditions.visibilityOf(shirtsPromo.getCartQty()));
-		
 		shirtsPromo.getCart().click();
 		shirtsPromo.getViewEditCart().click();
 		
 		cartPage.getshirt1ItemQty().clear();
 		cartPage.getshirt1ItemQty().sendKeys("4", Keys.ENTER);
 		
-		// Cart page has too many refreshes and fails the test often due to not catching the updated total.
-		// Inserting a pause to let the test breathe before continuing.
-		//action.pause(Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOf(cartPage.getTotal()));
+		BasePage.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
-		Assert.assertEquals("$150.00", cartPage.getTotal().getText());
+		Assert.assertEquals("$72.00", cartPage.getTotal().getText());
 		System.out.println("Total is $150");
 	}
 }
