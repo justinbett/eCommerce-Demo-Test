@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BasePage;
@@ -23,12 +24,12 @@ public class PromoAdd extends Hooks {
 	}
 	
 	@Test
-	public void PromoTest () throws IOException, InterruptedException {
+	public void promoTest () throws IOException, InterruptedException {
 		Homepage homepage = new Homepage();
 		ShirtsPromoPage shirtsPromo = new ShirtsPromoPage();
 		CartPage cartPage = new CartPage();
 		Actions action = new Actions(BasePage.getDriver());
-		WebDriverWait wait = new WebDriverWait(BasePage.getDriver(), Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(BasePage.getDriver(), Duration.ofSeconds(30));
 				
 		homepage.getPromoFree().click();
 		
@@ -45,7 +46,7 @@ public class PromoAdd extends Hooks {
 		shirtsPromo.getShirt2Color().click();
 		shirtsPromo.getShirt2Add().click();
 		System.out.println("Added Shirt 2 to cart");
-		
+
 		wait.until(ExpectedConditions.visibilityOf(shirtsPromo.getCartQty()));
 		
 		action.moveToElement(shirtsPromo.getShirt3()).perform();
@@ -53,7 +54,7 @@ public class PromoAdd extends Hooks {
 		shirtsPromo.getShirt3Color().click();
 		shirtsPromo.getShirt3Add().click();
 		System.out.println("Added Shirt 3 to cart");
-		
+
 		wait.until(ExpectedConditions.visibilityOf(shirtsPromo.getCartQty()));
 		
 		action.moveToElement(shirtsPromo.getShirt4()).perform();
@@ -62,17 +63,21 @@ public class PromoAdd extends Hooks {
 		shirtsPromo.getShirt4Add().click();
 		System.out.println("Added Shirt 4 to cart");
 		
+
 		wait.until(ExpectedConditions.visibilityOf(shirtsPromo.getCartQty()));
 		
 		shirtsPromo.getCart().click();
 		shirtsPromo.getViewEditCart().click();
 		
-		//WIP
 		cartPage.getshirt1ItemQty().clear();
 		cartPage.getshirt1ItemQty().sendKeys("4", Keys.ENTER);
 		
-		Thread.sleep(5000);
+		// Cart page has too many refreshes and fails the test often due to not catching the updated total.
+		// Inserting a pause to let the test breathe before continuing.
+		//action.pause(Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(cartPage.getTotal()));
+		
+		Assert.assertEquals("$150.00", cartPage.getTotal().getText());
+		System.out.println("Total is $150");
 	}
-	
-
 }

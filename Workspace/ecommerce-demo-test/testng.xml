@@ -31,4 +31,11 @@
     </classes>
   </test>
   
+  <!-- Test -->
+  <test thread-count="5" name="Promo Add">
+    <classes>
+      <class name="com.justinbett.ecommerce_demo_test.PromoAdd"/>
+    </classes>
+  </test>
+  
 </suite>
