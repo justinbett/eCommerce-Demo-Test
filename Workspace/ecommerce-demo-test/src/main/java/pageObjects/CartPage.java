@@ -13,7 +13,7 @@ public class CartPage extends BasePage{
 	public WebDriver driver;
 	
 	By shirt1ItemQty = By.xpath("//*[contains(@name,'cart') and contains(@data-cart-item-id,'WS05-M-Black')]");
-	By total = By.cssSelector(".grand.totals > .amount  .price");
+	By discountTotal = By.xpath("//div[@id='cart-totals']/div[@class='table-wrapper']/table[@class='data table totals']//tr[@class='totals']/td[@class='amount']");
 	
 	public CartPage() throws IOException {
 		this.driver = getDriver();
@@ -23,7 +23,7 @@ public class CartPage extends BasePage{
 		return driver.findElement(shirt1ItemQty);
 	}
 	
-	public WebElement getTotal() {
-		return driver.findElement(total);
+	public WebElement getDiscountTotal() {
+		return driver.findElement(discountTotal);
 	}
 }

@@ -22,10 +22,11 @@
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<!-- If CDP warnings show up in the log, update Selenium to the latest version -->
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-java</artifactId>
-	    <version>4.17.0</version>
+	    <version>4.18.1</version>
 	</dependency>
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 	<dependency>

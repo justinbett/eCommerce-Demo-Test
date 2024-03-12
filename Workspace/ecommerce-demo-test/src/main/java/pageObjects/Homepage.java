@@ -15,6 +15,7 @@ public class Homepage extends BasePage{
 	By createAccount = By.cssSelector(".header.panel > .header.links > li:nth-of-type(3) > a");
 	By signIn = By.cssSelector(".header.panel > .header.links > .authorization-link > a");
 	By signInBtn = By.cssSelector("fieldset button");
+	By loggedInMsg = By.cssSelector(".header.panel > .header.links > .greet.welcome > .logged-in");
 	By userNav = By.cssSelector(".header.panel > .header.links  span[role='button']");
 	By signOut = By.cssSelector(".header.panel > .header.links  .customer-menu > .header.links > .authorization-link");
 	By womenNav = By.cssSelector("[data-action] > [role] > [role='presentation']:nth-of-type(2)");
@@ -44,6 +45,10 @@ public class Homepage extends BasePage{
 	
 	public WebElement getSignInBtn() {
 		return driver.findElement(signInBtn);
+	}
+	
+	public WebElement getLoggedInMsg() {
+		return driver.findElement(loggedInMsg);
 	}
 	
 	public WebElement getUserNav() {

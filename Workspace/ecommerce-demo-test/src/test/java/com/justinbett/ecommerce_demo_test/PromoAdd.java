@@ -47,9 +47,9 @@ public class PromoAdd extends Hooks {
 		cartPage.getshirt1ItemQty().clear();
 		cartPage.getshirt1ItemQty().sendKeys("4", Keys.ENTER);
 		
-		BasePage.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(cartPage.getDiscountTotal()));
 		
-		Assert.assertEquals("$72.00", cartPage.getTotal().getText());
-		System.out.println("Total is $150");
+		Assert.assertEquals("-$24.00", cartPage.getDiscountTotal().getText());
+		System.out.println("Discount of -$24.00 added to total.");
 	}
 }
