@@ -24,22 +24,23 @@ public class PromoAdd extends Hooks {
 	}
 	
 	@Test
-	public void promoTest () throws IOException, InterruptedException {
+	public void promoTest() throws IOException, InterruptedException {
 		Homepage homepage = new Homepage();
 		ShirtsPromoPage shirtsPromo = new ShirtsPromoPage();
 		CartPage cartPage = new CartPage();
 		Actions action = new Actions(BasePage.getDriver());
 		WebDriverWait wait = new WebDriverWait(BasePage.getDriver(), Duration.ofSeconds(30));
-				
+		String getAddedMessageText;
+		
 		homepage.getPromoFree().click();
 		
 		action.moveToElement(shirtsPromo.getShirt1()).perform();
 		shirtsPromo.getShirt1Size().click();
 		shirtsPromo.getShirt1Color().click();
 		shirtsPromo.getShirt1Add().click();
-		System.out.println("Added Shirt 1 to cart");
-		
-		wait.until(ExpectedConditions.visibilityOf(shirtsPromo.getCartQty()));
+		getAddedMessageText = shirtsPromo.getAddedMessage().getText();
+		wait.until(ExpectedConditions.textToBePresentInElement(shirtsPromo.getAddedMessage(), getAddedMessageText));
+		System.out.println("promoTest(): " + getAddedMessageText);
 		
 		shirtsPromo.getCart().click();
 		shirtsPromo.getViewEditCart().click();
@@ -50,6 +51,6 @@ public class PromoAdd extends Hooks {
 		wait.until(ExpectedConditions.visibilityOf(cartPage.getDiscountTotal()));
 		
 		Assert.assertEquals("-$24.00", cartPage.getDiscountTotal().getText());
-		System.out.println("Discount of -$24.00 added to total.");
+		System.out.println("promoTest(): " + cartPage.getDiscountTotal().getText() + " discount applied.");
 	}
 }

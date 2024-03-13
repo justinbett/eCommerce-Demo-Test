@@ -29,7 +29,7 @@ public class AccountCreation extends Hooks {
 		createAccountPage.getConfirmPassword().sendKeys("AB#$12345");
 		createAccountPage.getCreateAccountBtn().click();
 		if (createAccountPage.getCreateError().isDisplayed()) {
-			System.out.println("createAccount() Test: An account is already created with the credentials used. Consider this a passed test");
+			System.out.println("createAccount(): An account is already created with the credentials used. Consider this a passed test.");
 		}
 		createAccountPage.getHomePage().click();
 	}

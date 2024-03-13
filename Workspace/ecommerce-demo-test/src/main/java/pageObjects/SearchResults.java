@@ -22,6 +22,7 @@ public class SearchResults extends BasePage{
 	By yogaShorts2Add = By.cssSelector("li:nth-of-type(4) > .product-item-info form[method='post'] > button[title='Add to Cart'] > span");
 	By cart = By.cssSelector(".minicart-wrapper > .action.showcart");
 	By cartQty = By.xpath("//body//div[@class='minicart-wrapper']/a[@href='https://magento.softwaretestingboard.com/checkout/cart/']/span[@class='counter qty']/span[@class='counter-number']");
+	By addedMessage = By.cssSelector("div[role='alert'] > div > div");
 	By proceedCart = By.cssSelector("button#top-cart-btn-checkout");
 	
 	public SearchResults() throws IOException {
@@ -66,6 +67,10 @@ public class SearchResults extends BasePage{
 	
 	public WebElement getCartQty() {
 		return driver.findElement(cartQty);
+	}
+	
+	public WebElement getAddedMessage() {
+		return driver.findElement(addedMessage);
 	}
 	
 	public WebElement getProceedCart() {

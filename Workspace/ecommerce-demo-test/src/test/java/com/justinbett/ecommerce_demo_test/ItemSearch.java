@@ -26,7 +26,7 @@ public class ItemSearch extends Hooks{
 		
 		homepage.getSearchBar().sendKeys("yoga shorts", Keys.RETURN);
 		Assert.assertEquals("Search results for: 'yoga shorts'", BasePage.getDriver().getTitle());
-		System.out.println("Searched for: yoga shorts");
+		System.out.println("search(): " + BasePage.getDriver().getTitle());
 	}
 	
 	@Test(dependsOnMethods = {"search"})
@@ -34,22 +34,23 @@ public class ItemSearch extends Hooks{
 		Actions action = new Actions(BasePage.getDriver());
 		SearchResults searchResults = new SearchResults();
 		WebDriverWait wait = new WebDriverWait(BasePage.getDriver(), Duration.ofSeconds(5));
+		String getAddedMessageText;
 		
 		action.moveToElement(searchResults.getYogaShorts1()).perform();
 		searchResults.getYogaShorts1Size29().click();
 		searchResults.getYogaShorts1ColorBlue().click();
-		searchResults.getYogaShorts1Add().click();
-		System.out.println("Added Womens Yoga Shorts");
-		
-		wait.until(ExpectedConditions.visibilityOf(searchResults.getCartQty()));
+		searchResults.getYogaShorts1Add().click();		
+		getAddedMessageText = searchResults.getAddedMessage().getText();
+		wait.until(ExpectedConditions.textToBePresentInElement(searchResults.getAddedMessage(), getAddedMessageText));
+		System.out.println("addSearch(): " + getAddedMessageText);
 		
 		action.moveToElement(searchResults.getYogaShorts2()).perform();
 		searchResults.getYogaShorts2Size34().click();
 		searchResults.getYogaShorts2ColorRed().click();
 		searchResults.getYogaShorts2Add().click();
-		System.out.println("Added Mens Yoga Shorts");
-		
-		wait.until(ExpectedConditions.visibilityOf(searchResults.getCartQty()));
+		getAddedMessageText = searchResults.getAddedMessage().getText();
+		wait.until(ExpectedConditions.textToBePresentInElement(searchResults.getAddedMessage(), getAddedMessageText));
+		System.out.println("addSearch(): " + getAddedMessageText);
 		
 		searchResults.getCart().click();
 		searchResults.getProceedCart().click();
