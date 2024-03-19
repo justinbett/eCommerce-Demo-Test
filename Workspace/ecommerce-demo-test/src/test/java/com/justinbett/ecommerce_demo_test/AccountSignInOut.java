@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import base.BasePage;
 import base.Hooks;
-import pageObjects.Homepage;
+import pageObjects.NavigationHeader;
 import pageObjects.SignInPage;
 import pageObjects.SignOutPage;
 
@@ -24,26 +24,25 @@ public class AccountSignInOut extends Hooks {
 	
 	@Test()
 	public void signIn() throws IOException {
-		Homepage homePage = new Homepage();
+		NavigationHeader navHeader = new NavigationHeader();
 		SignInPage signInPage = new SignInPage();
 		
-		homePage.getSignIn().click();
+		navHeader.getSignIn().click();
 		signInPage.getEmail().sendKeys("jbtest123@test.com");
 		signInPage.getPassword().sendKeys("AB#$12345");
-		homePage.getSignInBtn().click();
+		navHeader.getSignInBtn().click();
 		Assert.assertEquals("Home Page", BasePage.getDriver().getTitle());
 		System.out.println("signIn(): User successfully signed in.");
 	}
 	
 	@Test(dependsOnMethods = {"signIn"})
 	public void signOut() throws IOException {
-		Homepage homePage = new Homepage();
+		NavigationHeader navHeader = new NavigationHeader();
 		SignOutPage signOutPage = new SignOutPage();
 		WebDriverWait wait = new WebDriverWait(BasePage.getDriver(), Duration.ofSeconds(10));
 		
-		wait.until(ExpectedConditions.visibilityOf(homePage.getUserNav()));
-		homePage.getUserNav().click();
-		homePage.getSignOut().click();
+		wait.until(ExpectedConditions.visibilityOf(navHeader.getUserNav())).click();
+		navHeader.getSignOut().click();
 		Assert.assertEquals("You are signed out", signOutPage.getSignOutConfirm().getText());
 		System.out.println("signOut(): User successfully signed out.");
 	}

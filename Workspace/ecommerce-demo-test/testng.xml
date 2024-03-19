@@ -32,9 +32,9 @@
   </test>
   
   <!-- Test -->
-  <test thread-count="5" name="Promo Add">
+  <test thread-count="5" name="Promo Test">
     <classes>
-      <class name="com.justinbett.ecommerce_demo_test.PromoAdd"/>
+      <class name="com.justinbett.ecommerce_demo_test.PromoTest"/>
     </classes>
   </test>
   

@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import base.BasePage;
 import base.Hooks;
-import pageObjects.Homepage;
+import pageObjects.NavigationHeader;
 
 @Listeners(resources.Listeners.class)
 public class DropdownNavigation extends Hooks {
@@ -18,20 +18,20 @@ public class DropdownNavigation extends Hooks {
 	}
 	
 	@Test
-	public void dropdownNavigation () throws IOException, InterruptedException {
+	public void dropdownNavigation () throws IOException {
 		Actions action = new Actions(BasePage.getDriver());
-		Homepage homePage = new Homepage();
-		action.moveToElement(homePage.getWomenNav()).perform();
-		action.moveToElement(homePage.getWomenNavTops()).perform();
-		action.moveToElement(homePage.getWomenNavBottoms()).perform();
-		action.moveToElement(homePage.getMenNav()).perform();
-		action.moveToElement(homePage.getMenNavTops()).perform();
-		action.moveToElement(homePage.getMenNavBottoms()).perform();
-		action.moveToElement(homePage.getGearNav()).perform();
-		action.moveToElement(homePage.getTrainingNav()).perform();
-		action.moveToElement(homePage.getMenNav()).perform();
-		action.moveToElement(homePage.getMenNavTops()).perform();
-		action.moveToElement(homePage.getMenNavJackets()).perform();
-		homePage.getMenNavJackets().click();
+		NavigationHeader navHeader = new NavigationHeader();
+		action.moveToElement(navHeader.getWomenNav()).perform();
+		action.moveToElement(navHeader.getWomenNavTops()).perform();
+		action.moveToElement(navHeader.getWomenNavBottoms()).perform();
+		action.moveToElement(navHeader.getMenNav()).perform();
+		action.moveToElement(navHeader.getMenNavTops()).perform();
+		action.moveToElement(navHeader.getMenNavBottoms()).perform();
+		action.moveToElement(navHeader.getGearNav()).perform();
+		action.moveToElement(navHeader.getTrainingNav()).perform();
+		action.moveToElement(navHeader.getMenNav()).perform();
+		action.moveToElement(navHeader.getMenNavTops()).perform();
+		action.moveToElement(navHeader.getMenNavJackets()).perform();
+		navHeader.getMenNavJackets().click();
 	}
 }

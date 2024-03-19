@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import base.Hooks;
 import pageObjects.CreateAccountPage;
-import pageObjects.Homepage;
+import pageObjects.NavigationHeader;
 
 @Listeners(resources.Listeners.class)
 public class AccountCreation extends Hooks {
@@ -18,10 +18,10 @@ public class AccountCreation extends Hooks {
 
 	@Test
 	public void createAccount() throws IOException {
-		Homepage homePage = new Homepage();
+		NavigationHeader navHeader = new NavigationHeader();
 		CreateAccountPage createAccountPage = new CreateAccountPage();
 		
-		homePage.getCreateAccount().click();
+		navHeader.getCreateAccount().click();
 		createAccountPage.getFirstName().sendKeys("Justin");
 		createAccountPage.getLastName().sendKeys("B");
 		createAccountPage.getEmail().sendKeys("jbtest123@test.com");
@@ -31,6 +31,6 @@ public class AccountCreation extends Hooks {
 		if (createAccountPage.getCreateError().isDisplayed()) {
 			System.out.println("createAccount(): An account is already created with the credentials used. Consider this a passed test.");
 		}
-		createAccountPage.getHomePage().click();
+		navHeader.getHomePage().click();
 	}
 }

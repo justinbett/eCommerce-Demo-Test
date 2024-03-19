@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-13T15:34:27 EDT" name="Default suite" finished-at="2024-03-13T15:34:37 EDT" duration-ms="10018">
+  <suite started-at="2024-03-19T09:50:13 EDT" name="Default suite" finished-at="2024-03-19T09:50:29 EDT" duration-ms="15589">
     <groups>
     </groups>
-    <test started-at="2024-03-13T15:34:27 EDT" name="Default test" finished-at="2024-03-13T15:34:37 EDT" duration-ms="10018">
+    <test started-at="2024-03-19T09:50:13 EDT" name="Default test" finished-at="2024-03-19T09:50:29 EDT" duration-ms="15589">
       <class name="com.justinbett.ecommerce_demo_test.ItemSearch">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.justinbett.ecommerce_demo_test.ItemSearch@158da8e]" started-at="2024-03-13T15:34:27 EDT" name="setup" finished-at="2024-03-13T15:34:30 EDT" duration-ms="2786" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.justinbett.ecommerce_demo_test.ItemSearch@3bb9a3ff]" started-at="2024-03-19T09:50:13 EDT" name="setup" finished-at="2024-03-19T09:50:16 EDT" duration-ms="3329" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="search()[pri:0, instance:com.justinbett.ecommerce_demo_test.ItemSearch@158da8e]" started-at="2024-03-13T15:34:30 EDT" name="search" finished-at="2024-03-13T15:34:32 EDT" duration-ms="1663" status="PASS">
+        <test-method signature="search()[pri:0, instance:com.justinbett.ecommerce_demo_test.ItemSearch@3bb9a3ff]" started-at="2024-03-19T09:50:16 EDT" name="search" finished-at="2024-03-19T09:50:18 EDT" duration-ms="1646" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- search -->
-        <test-method signature="addSearch()[pri:0, instance:com.justinbett.ecommerce_demo_test.ItemSearch@158da8e]" started-at="2024-03-13T15:34:32 EDT" name="addSearch" finished-at="2024-03-13T15:34:37 EDT" depends-on-methods="com.justinbett.ecommerce_demo_test.ItemSearch.search" duration-ms="5368" status="PASS">
+        <test-method signature="addSearch()[pri:0, instance:com.justinbett.ecommerce_demo_test.ItemSearch@3bb9a3ff]" started-at="2024-03-19T09:50:18 EDT" name="addSearch" finished-at="2024-03-19T09:50:21 EDT" depends-on-methods="com.justinbett.ecommerce_demo_test.ItemSearch.search" duration-ms="2911" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addSearch -->
-        <test-method is-config="true" signature="cleanup()[pri:0, instance:com.justinbett.ecommerce_demo_test.ItemSearch@158da8e]" started-at="2024-03-13T15:34:37 EDT" name="cleanup" finished-at="2024-03-13T15:34:37 EDT" duration-ms="172" status="PASS">
+        <test-method signature="guestCheckout()[pri:0, instance:com.justinbett.ecommerce_demo_test.ItemSearch@3bb9a3ff]" started-at="2024-03-19T09:50:21 EDT" name="guestCheckout" finished-at="2024-03-19T09:50:28 EDT" depends-on-methods="com.justinbett.ecommerce_demo_test.ItemSearch.addSearch" duration-ms="7439" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- guestCheckout -->
+        <test-method is-config="true" signature="cleanup()[pri:0, instance:com.justinbett.ecommerce_demo_test.ItemSearch@3bb9a3ff]" started-at="2024-03-19T09:50:28 EDT" name="cleanup" finished-at="2024-03-19T09:50:29 EDT" duration-ms="228" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanup -->
