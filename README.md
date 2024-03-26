@@ -12,9 +12,9 @@ A simple QA automation test using using Selenium and Java on a demo eCommerce we
 **Test Plan:** https://docs.google.com/spreadsheets/d/1Kdz-ZcEkzS5wWbFElhzfYRvwZ6nNUaQcqdPV4CYK03Q/edit?usp=sharing
 
 ## Reported Bugs:
-**The "added to cart" alert occasionally doesn't appear** 
+**The "added to cart" alert occasionally doesn't appear:** 
 - When running the "ItemSearch" and "PromoAdd" tests, they will occasionally fail.
-- The tests cannot move forward as the alert will sometimes not load.
+- This is due to the tests not being able to move forward, as the alert will not load randomly.
 
 
 [selenium-badge]: https://img.shields.io/badge/Selenium-green?style=for-the-badge&logo=selenium&logoColor=white&labelColor=%2343B02A&color=%2343B02A
