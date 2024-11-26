@@ -30,13 +30,13 @@ public class WebDriverInstance {
 		Properties prop = new Properties();
 		FileInputStream data = new FileInputStream(
 				System.getProperty("user.dir") +
-				"\\src\\main\\java\\resources\\config.properties");
+				"//src//main//java//resources//config.properties");
 		prop.load(data);
 		
 		//Create a way to easily switch between different drivers for different WebDrivers using the config.properties file.
 		if (prop.getProperty("browser").equals("chrome")) {
 			// If the value equals chrome, set the WebDriver to use the chromedriver.exe
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//drivers//chromedriver");
 			driver = new ChromeDriver();
 		} else if (prop.getProperty("browser").equals("firefox")) {
 			// If the value equals firefox, set the WebDriver to use the gekodriver.exe
